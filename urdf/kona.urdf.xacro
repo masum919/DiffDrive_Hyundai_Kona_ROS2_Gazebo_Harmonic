@@ -1,0 +1,338 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="hyundai_kona">
+  
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.264699056618069 3.0776511222852E-05 0.16681154112487"
+        rpy="0 0 0" />
+      <mass
+        value="563.052208287187" />
+      <inertia
+        ixx="58.9011371583765"
+        ixy="4.22896719216684E-05"
+        ixz="-0.72985717781807"
+        iyy="28.8820125943646"
+        iyz="0.00817806711271641"
+        izz="72.5823509151951" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hyundai_kona/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.976470588235294 0.219607843137255 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hyundai_kona/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_back_wheel">
+    <inertial>
+      <origin
+        xyz="0.0286482971125825 -0.000523532364202328 -0.151563215436339"
+        rpy="0 0 0" />
+      <mass
+        value="86.5546329020324" />
+      <inertia
+        ixx="3.87817810411085"
+        ixy="-0.0014700274376826"
+        ixz="-0.389387649232246"
+        iyy="3.80492529843167"
+        iyz="0.00781108570668996"
+        izz="5.87391832935506" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hyundai_kona/meshes/left_back_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hyundai_kona/meshes/left_back_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leftbackwheel"
+    type="continuous">
+    <origin
+      xyz="-1.2922 0.91501 -0.023861"
+      rpy="-1.566 -0.0063592 -0.18603" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_back_wheel" />
+    <axis
+      xyz="-0.18495 0.0037106 0.98274" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="right_back_wheel">
+    <inertial>
+      <origin
+        xyz="0.0286505967127242 -0.000614652868174304 0.151562438608138"
+        rpy="0 0 0" />
+      <mass
+        value="86.5546329020322" />
+      <inertia
+        ixx="3.8781781236946"
+        ixy="-0.00147041560956481"
+        ixz="0.3893876952339"
+        iyy="3.80492531216235"
+        iyz="-0.00781303951065885"
+        izz="5.87391829604057" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hyundai_kona/meshes/right_back_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hyundai_kona/meshes/right_back_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rightbackwheel"
+    type="continuous">
+    <origin
+      xyz="-1.2922 -0.91499 -0.023509"
+      rpy="-1.576 -0.0062881 0.18602" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_back_wheel" />
+    <axis
+      xyz="-0.18495 0.0037106 -0.98274" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="left_front_wheel">
+    <inertial>
+      <origin
+        xyz="-0.0239800740509795 -0.0127551934920325 -0.151837638201072"
+        rpy="0 0 0" />
+      <mass
+        value="86.5546329020323" />
+      <inertia
+        ixx="3.85702504826659"
+        ixy="0.0278540157916656"
+        ixz="0.328914864294296"
+        iyy="3.81977893933099"
+        iyz="0.175747756204746"
+        izz="5.88021774429997" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hyundai_kona/meshes/left_front_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hyundai_kona/meshes/left_front_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leftfrontwheel"
+    type="continuous">
+    <origin
+      xyz="1.4524 0.88502 0.08092"
+      rpy="-1.5765 -0.51712 0.18054" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_front_wheel" />
+    <axis
+      xyz="-0.15599 -0.083351 -0.98424" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="rigth_front_wheel">
+    <inertial>
+      <origin
+        xyz="-0.0242005509547987 -0.108850938680285 0.106574920919042"
+        rpy="0 0 0" />
+      <mass
+        value="86.5546329020033" />
+      <inertia
+        ixx="3.85712222694254"
+        ixy="0.23616414554103"
+        ixz="-0.231052741885735"
+        iyy="4.87281308058707"
+        iyz="-1.04480381365019"
+        izz="4.82708642434705" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hyundai_kona/meshes/rigth_front_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://hyundai_kona/meshes/rigth_front_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rightfrontwheel"
+    type="continuous">
+    <origin
+      xyz="1.4527 -0.88498 0.080743"
+      rpy="-2.3381 -0.18284 -0.15942" />
+    <parent
+      link="base_link" />
+    <child
+      link="rigth_front_wheel" />
+    <axis
+      xyz="-0.15613 -0.70603 0.69075" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+
+
+<!-- Gazebo Parameters -->
+<gazebo reference="base_link">
+    <mu1>0.5</mu1>
+    <mu2>0.5</mu2>
+</gazebo>
+
+<gazebo reference="left_back_wheel">
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+</gazebo>
+
+<gazebo reference="right_back_wheel">
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+</gazebo>
+
+<gazebo reference="left_front_wheel">
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+</gazebo>
+
+<gazebo reference="rigth_front_wheel">
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+</gazebo>
+
+<!-- Gazebo Plugins -->
+<gazebo>
+    <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
+        <left_joint>leftbackwheel</left_joint>
+        <right_joint>rightbackwheel</right_joint>
+        <wheel_separation>1.83</wheel_separation>
+        <wheel_radius>0.3175</wheel_radius>
+        <max_linear_acceleration>2.0</max_linear_acceleration>
+        <max_angular_acceleration>2.0</max_angular_acceleration>
+        <max_velocity>20</max_velocity>
+        <odom_publish_frequency>50</odom_publish_frequency>
+        <topic>cmd_vel</topic>
+        <odom_topic>odom</odom_topic>
+    </plugin>
+
+    <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
+        <topic>joint_states</topic>
+        <joint_name>leftbackwheel</joint_name>
+        <joint_name>rightbackwheel</joint_name>
+        <joint_name>leftfrontwheel</joint_name>
+        <joint_name>rightfrontwheel</joint_name>
+    </plugin>
+</gazebo>
+
+
+
+
+
+</robot>
